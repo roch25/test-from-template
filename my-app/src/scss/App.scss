@@ -1,0 +1,17 @@
+@import 'config';
+@import 'main-header';
+@import 'list';
+@import 'error';
+@import 'player';
+
+body{
+    display: flex;  
+    flex-direction: row;
+    background-color: $color-dark-grey;
+    margin: 1vh;
+    height: 100%;
+    width: 98vw;
+    @include mobile(){
+        flex-direction: column;
+    }
+}

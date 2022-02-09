@@ -1,0 +1,111 @@
+.list{
+    padding: 2px 4px;
+    margin: 2vh 4vh auto;
+    max-width: 70vw;
+    &__item{
+        list-style: none;
+        cursor: pointer;
+        padding: 2px;
+        margin: 0 0 4px 0;
+        background-image: linear-gradient(to right, rgb(53, 52, 52) ,rgb(36, 36, 36));
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        width: 900px;
+        border: 1px solid $color-dark-grey;
+        animation: 3500ms ease-out 0s 1 slideOut; 
+        transition: width 3200ms ease-in;
+        .container1{
+            position: relative;
+            img {
+                min-width: 28min;
+                min-height: 24vmin;
+            }
+            p{ // to-do: display duration of vid
+                position: absolute;
+                bottom: 8px;
+                right: 12px;
+                font-size: 4vh;
+                color: $color-white;
+                background-color: $color-dark-grey;
+                border-radius: 4px;
+                padding: 2px;
+                opacity: 0.8;
+            }
+        }
+        &__list2{
+            padding: 2px;
+            &__title{
+                font-size: map-get($font-size, medium);
+                font-weight: bold;
+            }
+            &__channelName{
+                font-size: map-get($font-size, medium);
+                font-weight: normal;
+            }
+            &__desc{
+                color: $color-light-grey;
+                font-size: map-get($font-size, small);
+                font-style: normal;
+                font-weight: lighter;
+            }
+        }
+        &:hover {
+            border: 1px solid $color-light-grey;
+        }
+        &:active {
+            border: 1px solid $color-light-grey;
+            background-image: linear-gradient(to right, rgb(58, 58, 58) ,rgb(44, 44, 44));
+        }
+    }
+  
+    // @include mobile(){
+    //     .list__item__list2{
+    //         &__title{
+    //             font-size: map-get($font-size, small);
+    //         }
+    //         &__channelName{
+    //             font-size: map-get($font-size, small);
+    //         }
+    //         &__desc{
+    //            font-size: map-get($font-size, x-small);
+    //         }
+    //     }
+    //     .container img{
+    //         min-width: 28min;
+    //         min-height: 20vmin;
+    //     }   
+    // } 
+}
+
+.side{
+    animation: 3500ms ease-in 0s 1 slideIn; 
+    width: 500px;
+    .list__item__list2__title{
+        font-size: map-get($font-size, small);
+    }
+    .list__item__list2__channelName{
+        font-size: map-get($font-size, x-small);
+    }
+    .list__item__list2__desc{
+        font-size: map-get($font-size, xx-small);
+    }
+}
+
+@keyframes slideIn{
+    0%{
+        transform: translateX(0%); 
+    }
+    90%{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideOut{
+    0%{
+        transform: translateX(100%); 
+    }
+    90%{
+        transform: translateX(0%);
+    }
+}
